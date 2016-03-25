@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Kosherizer",
+    "description": "This extension makes every loaded webpage kosher by taking out all the curse words and replacing them with their appropiate counterparts",
+    "version": "0.2.0",
+
+    "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }
+    ],
+
+    "options_ui":
+    {
+        "page": "options/options.html",
+        "chrome_style": true
+    },
+
+    "permissions": ["notifications"],
+
+    "background":
+    {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    }
+}
